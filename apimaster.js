@@ -31,22 +31,17 @@ let addPara = document.getElementById("addPara");
 addPara.addEventListener("click", () => {
   let para = document.getElementById("paras");
   let string = `<div class="row my-2">
-                    <label for="url" class="col-sm-2 col-form-label">Parameter ${
-                      addedParaCount + 2
-                    }</label>
+                    <label for="url" class="col-sm-2 col-form-label">Parameter ${addedParaCount + 2
+    }</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="parameterKey${
-                          addedParaCount + 2
-                        }" placeholder="Enter Parameter ${
-    addedParaCount + 2
-  } Key">
+                        <input type="text" class="form-control" id="parameterKey${addedParaCount + 2
+    }" placeholder="Enter Parameter ${addedParaCount + 2
+    } Key">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="parameterValue${
-                          addedParaCount + 2
-                        }" placeholder="Enter Parameter ${
-    addedParaCount + 2
-  } Value">
+                        <input type="text" class="form-control" id="parameterValue${addedParaCount + 2
+    }" placeholder="Enter Parameter ${addedParaCount + 2
+    } Value">
                     </div>
                     <button class="btn btn-primary deletePara"> - </button>
                     </div>`;
@@ -69,7 +64,7 @@ addPara.addEventListener("click", () => {
 let submit = document.getElementById("submit");
 submit.addEventListener("click", () => {
   //*wait
-  document.getElementById("responseText").value =
+  document.getElementById("responsePrism").innerHTML =
     "Please wait... Fetching response...";
   //* Fetching values
   let url = document.getElementById("url").value;
@@ -108,7 +103,7 @@ submit.addEventListener("click", () => {
     })
       .then((response) => response.text())
       .then((text) => {
-        document.getElementById("responseText").value = text;
+        document.getElementById("responsePrism").innerHTML = text;
       });
   } else {
     fetch(url, {
@@ -120,7 +115,8 @@ submit.addEventListener("click", () => {
     })
       .then((response) => response.text())
       .then((text) => {
-        document.getElementById("responseText").value = text;
+        document.getElementById("responsePrism").innerHTML = text;
+        Prism.highlightAll()
       });
   }
 });
