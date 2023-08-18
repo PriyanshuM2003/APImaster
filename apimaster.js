@@ -75,6 +75,9 @@ submit.addEventListener("click", () => {
     "input[name='contentType']:checked"
   ).value;
 
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const completeUrl = proxyUrl + url;
+
   //* if para selected, collect all the parameters into object
   if (contentType == "paras") {
     data = {};
@@ -91,7 +94,8 @@ submit.addEventListener("click", () => {
   }
 
   //* Log all the values in the console for debugging
-  console.log("URL is ", url);
+  console.log("URL is ", completeUrl);
+  // console.log("URL is ", url);
   console.log("requestType is ", requestType);
   console.log("contentType is ", contentType);
   console.log("data is ", data);
