@@ -93,13 +93,6 @@ submit.addEventListener("click", () => {
     data = document.getElementById("requestJSONText").value;
   }
 
-  //* Log all the values in the console for debugging
-  console.log("URL is ", completeUrl);
-  // console.log("URL is ", url);
-  console.log("requestType is ", requestType);
-  console.log("contentType is ", contentType);
-  console.log("data is ", data);
-
   //* Fetching Get request
   if (requestType == "GET") {
     fetch(url, {
